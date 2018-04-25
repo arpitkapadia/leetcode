@@ -42,7 +42,35 @@ public class Test1 {
 
 
     public static void mirror(Stack<Integer> s) {
-        
+        Queue<Integer> q = new LinkedList<Integer>();
+        if(s == null) {
+            throw new IllegalArgumentException();
+        }
+        int size = s.size();
+
+        while(!s.isEmpty()) {
+            q.add(s.pop());
+        }
+        int count = size;
+        while(count-- > 0) {
+            int tmp = q.remove();
+            s.push(tmp);
+            q.add(tmp);
+        }
+        while(!s.isEmpty()) {
+            q.add(s.pop());
+        }
+
+        count = size;
+        while(count-- > 0) {
+            int tmp = q.remove();
+            q.add(tmp);
+        }
+
+        while(!q.isEmpty()) {
+            s.push(q.remove());
+        }
+
     }
 
     public static void stutter(Stack<Integer> s) {
