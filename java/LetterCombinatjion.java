@@ -35,7 +35,7 @@ class LetterCombination {
             for(char c : s.toCharArray()) {
                 out_list.add(Character.toString(c));
             }
-            System.out.println(out_list);
+            //System.out.println(out_list);
             index++;
             while(index < digits.length()) {
                 if(digits.charAt(index) == '1') {
